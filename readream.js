@@ -18,23 +18,7 @@ var LibraryItems = Backbone.Collection.extend({
 	
 });
 
-//var  Library = new LibraryItems(window.ReadiumLibraryData);
-current_library_request = $.ajax({
-      type: "GET",
-      url: "api/get_book_list.php",
-      data: '',
-      cache: false,
-      dataType: "json",
 
-      error : function(XMLHttpRequest, textStatus, errorThrown) {
-          alert('Error: '+textStatus+'\n\n'+errorThrown);
-      },
-
-      success : function(json, textStatus) {
-      	  console.log(json);
-      	  var  Library = new LibraryItems(json);
-      }
-  });
 
 
 var LibraryItemView = Backbone.View.extend({
@@ -114,7 +98,26 @@ var LibraryItemsView = Backbone.View.extend({
 	}
 });
 
-var  Lib_view = new LibraryItemsView({collection: Library});
-Lib_view.render();
+
+//var  Library = new LibraryItems(window.ReadiumLibraryData);
+var current_library_request = $.ajax({
+      type: "GET",
+      url: "api/get_book_list.php",
+      data: '',
+      cache: false,
+      dataType: "json",
+
+      error : function(XMLHttpRequest, textStatus, errorThrown) {
+          alert('Error: '+textStatus+'\n\n'+errorThrown);
+      },
+
+      success : function(json, textStatus) {
+      	  console.log(json);
+      	  var  Library = new LibraryItems(json);
+      	  var  Lib_view = new LibraryItemsView({collection: Library});
+		  Lib_view.render();
+      }
+  });
+
 
 });
