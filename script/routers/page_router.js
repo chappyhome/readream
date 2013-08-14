@@ -8,35 +8,13 @@ PageRouter = Backbone.Router.extend({
 	},
 
 	div_page_handle: function(page) {
-		console.info(page);
-		
-
-	window._curent_page = page;
-	var current_library_request = $.ajax({
-	      type: "GET",
-	      url: "api/get_book_total.php",
-	      data: '',
-	      cache: false,
-	      dataType: "text",
-
-	      error : function(XMLHttpRequest, textStatus, errorThrown) {
-	          alert('Error: '+textStatus+'\n\n'+errorThrown);
-	      },
-
-	      success : function(total, textStatus) {
-	      	  	console.log(window._curent_page);
-	      	  	var p         = (window._curent_page == undefined||window._curent_page == null) ? 1 : window._curent_page;
-	      	  	console.log("ddd"+ p+"aaa")
-				var num       = 10;
-				var start     = (p - 1) * num;
-				console.log("ddd"+ start+"aaa")
-				window._data  = '?start=' + start + '&num=' + num;
-				window._page  = p;
-				window._num   = num;
-				window._start = start;
-				window._total = total;
-	      }
-	 });
+		var p         = (page == undefined || page == null) ? 1 : page;
+		var num       = 10;
+		var start     = (p - 1) * num;
+		window._data  = '?start=' + start + '&num=' + num;
+		window._current_page  = p;
+		window._num   = num;
+		window._start = start;
 	}
 
 });

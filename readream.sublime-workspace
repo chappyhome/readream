@@ -8,18 +8,18 @@
 	"buffers":
 	[
 		{
-			"file": "readream.js",
+			"file": "script/routers/page_router.js",
 			"settings":
 			{
-				"buffer_size": 2674,
+				"buffer_size": 561,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "api/get_book_list.php",
+			"file": "script/namespaces/crx_library_namespace.js",
 			"settings":
 			{
-				"buffer_size": 1161,
+				"buffer_size": 1608,
 				"line_ending": "Windows"
 			}
 		},
@@ -27,39 +27,42 @@
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 3302,
+				"buffer_size": 4278,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "css/readream.css",
+			"contents": "var LibraryModelPage = Backbone.Model.extend({\n	\n\n	defaults: function() {\n		return {\n			start: 0,\n			num: 10,\n			page: 1,\n			total: 0,\n			page_num: 0\n			//five_page_order:{page1:1,page2:2,page3:3,page4:4,page5:5}\n		};\n	},\n\n	get_page_order : function() {\n		\n	}\n\n\n});\n\n\n\nvar LibraryPageView = Backbone.View.extend({\n	tagName: 'ul',\n\n	initialize: function() {\n		this.template = _.template($('#library_divpage_template').html());\n	},\n	\n	render: function() {\n		//var $el = this.$el;\n		var renderedContent = this.template({data: this.model.get('data')});\n		$(this.el).html(renderedContent);\n		$('#library-div-page').html($(this.el));\n		return this;\n	},\n\n	events:{\n		\"click #first_li_page\"   : \"first_handle\",\n		\"click #last_li_page\"   : \"last_handle\"\n	},\n\n	first_handle : function(e) {\n		e.preventDefault();\n		alert(\"first\");\n	},\n\n	last_handle : function(e) {\n		e.preventDefault();\n		alert(\"last\");\n	}\n});",
+			"file": "script/views/page.js",
+			"file_size": 949,
+			"file_write_time": 130209677970434001,
 			"settings":
 			{
-				"buffer_size": 661,
+				"buffer_size": 899,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "/F/Download/Apache UPUPW PHP5.5  UP-A5.0/upupw/vhosts/deliverkindle.com/readium/views/library.html",
+			"file": "script/views/library.js",
 			"settings":
 			{
-				"buffer_size": 8628,
-				"line_ending": "Unix"
+				"buffer_size": 2084,
+				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "/F/Download/Apache UPUPW PHP5.5  UP-A5.0/upupw/vhosts/deliverkindle.com/readium/scripts/library.js",
+			"file": "/F/Download/Apache UPUPW PHP5.5  UP-A5.0/upupw/vhosts/todos.com/todos.js",
 			"settings":
 			{
-				"buffer_size": 7701,
-				"line_ending": "Unix"
+				"buffer_size": 6710,
+				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "/F/Download/Apache UPUPW PHP5.5  UP-A5.0/upupw/vhosts/deliverkindle.com/readium/scripts/templates.js",
+			"file": "/F/Download/Apache UPUPW PHP5.5  UP-A5.0/upupw/vhosts/deliverkindle.com/readium/scripts/views/pagination_strategies/fixed_pagination_view.js",
 			"settings":
 			{
-				"buffer_size": 16990,
+				"buffer_size": 10421,
 				"line_ending": "Unix"
 			}
 		}
@@ -132,12 +135,25 @@
 	},
 	"file_history":
 	[
+		"/F/Download/Apache UPUPW PHP5.5  UP-A5.0/upupw/vhosts/deliverkindle.com/readium/scripts/namespaces/crx_viewer_namespace.js",
+		"/F/Download/Apache UPUPW PHP5.5  UP-A5.0/upupw/vhosts/deliverkindle.com/readium/scripts/namespaces/ws_lib_namespace.js",
+		"/F/Download/Apache UPUPW PHP5.5  UP-A5.0/upupw/vhosts/deliverkindle.com/readium/scripts/routers/ws_router.js",
+		"/F/Download/Apache UPUPW PHP5.5  UP-A5.0/upupw/vhosts/deliverkindle.com/readium/scripts/routers/crx_library_router.js",
+		"/F/Download/Apache UPUPW PHP5.5  UP-A5.0/upupw/vhosts/deliverkindle.com/readium/scripts/routers/crx_viewer_router.js",
+		"/F/Download/Apache UPUPW PHP5.5  UP-A5.0/upupw/vhosts/deliverkindle.com/readium/scripts/viewer.js",
+		"/F/Download/Apache UPUPW PHP5.5  UP-A5.0/upupw/vhosts/deliverkindle.com/readium/scripts/library.js",
+		"/F/Download/Apache UPUPW PHP5.5  UP-A5.0/upupw/vhosts/deliverkindle.com/readium/scripts/extractBook.js",
+		"/F/Download/Apache UPUPW PHP5.5  UP-A5.0/upupw/vhosts/todos.com/todos.js",
+		"/F/Download/Apache UPUPW PHP5.5  UP-A5.0/upupw/vhosts/readream.com/api/get_book_list.php",
+		"/F/Download/Apache UPUPW PHP5.5  UP-A5.0/upupw/vhosts/readream.com/readream.js",
+		"/F/Download/Apache UPUPW PHP5.5  UP-A5.0/upupw/vhosts/readream.com/index.html",
+		"/F/Download/Apache UPUPW PHP5.5  UP-A5.0/upupw/vhosts/readream.com/css/readream.css",
+		"/F/Download/Apache UPUPW PHP5.5  UP-A5.0/upupw/vhosts/deliverkindle.com/readium/views/library.html",
+		"/F/Download/Apache UPUPW PHP5.5  UP-A5.0/upupw/vhosts/deliverkindle.com/readium/scripts/templates.js",
 		"/F/Download/Apache UPUPW PHP5.5  UP-A5.0/upupw/vhosts/deliverkindle.com/readium/css/library.css",
 		"/F/Download/Apache UPUPW PHP5.5  UP-A5.0/upupw/vhosts/deliverkindle.com/readium/index.html",
 		"/F/Download/Apache UPUPW PHP5.5  UP-A5.0/upupw/vhosts/deliverkindle.com/readium/css/viewer_manifest.css",
-		"/F/Download/Apache UPUPW PHP5.5  UP-A5.0/upupw/vhosts/readream.com/css/readream.css",
 		"/F/Download/Apache UPUPW PHP5.5  UP-A5.0/upupw/vhosts/deliverkindle.com/readium/scripts/readium_library_data.js",
-		"/F/Download/Apache UPUPW PHP5.5  UP-A5.0/upupw/vhosts/readream.com/index.html",
 		"/F/Download/Apache UPUPW PHP5.5  UP-A5.0/upupw/vhosts/deliverkindle.com/simpleepub/index.html",
 		"/C/Users/Administrator/AppData/Roaming/Sublime Text 2/Packages/Gist/Gist.sublime-settings",
 		"/F/Download/Apache UPUPW PHP5.5  UP-A5.0/upupw/vhosts/todos.com/index.html",
@@ -177,6 +193,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"data",
 			"title",
 			"info-item",
 			"title",
@@ -199,23 +216,23 @@
 	"groups":
 	[
 		{
-			"selected": 6,
+			"selected": 2,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "readream.js",
+					"file": "script/routers/page_router.js",
 					"settings":
 					{
-						"buffer_size": 2674,
+						"buffer_size": 561,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1814,
-								1814
+								486,
+								499
 							]
 						],
 						"settings":
@@ -271,25 +288,25 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 486.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "api/get_book_list.php",
+					"file": "script/namespaces/crx_library_namespace.js",
 					"settings":
 					{
-						"buffer_size": 1161,
+						"buffer_size": 1608,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1042,
-								1042
+								1412,
+								1412
 							]
 						],
 						"settings":
@@ -341,11 +358,11 @@
 							"incomplete_sync": null,
 							"remote_loading": false,
 							"synced": false,
-							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 216.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -355,15 +372,15 @@
 					"file": "index.html",
 					"settings":
 					{
-						"buffer_size": 3302,
+						"buffer_size": 4278,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3101,
-								3101
+								3236,
+								3236
 							]
 						],
 						"settings":
@@ -420,25 +437,25 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 540.0,
+						"translation.y": 972.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 3,
-					"file": "css/readream.css",
+					"file": "script/views/page.js",
 					"settings":
 					{
-						"buffer_size": 661,
+						"buffer_size": 899,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								256,
+								256
 							]
 						],
 						"settings":
@@ -490,9 +507,8 @@
 							"incomplete_sync": null,
 							"remote_loading": false,
 							"synced": false,
-							"syntax": "Packages/CSS/CSS.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -502,92 +518,18 @@
 				},
 				{
 					"buffer": 4,
-					"file": "/F/Download/Apache UPUPW PHP5.5  UP-A5.0/upupw/vhosts/deliverkindle.com/readium/views/library.html",
+					"file": "script/views/library.js",
 					"settings":
 					{
-						"buffer_size": 8628,
+						"buffer_size": 2084,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close"
-							],
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 648.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "/F/Download/Apache UPUPW PHP5.5  UP-A5.0/upupw/vhosts/deliverkindle.com/readium/scripts/library.js",
-					"settings":
-					{
-						"buffer_size": 7701,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1510,
-								1531
+								661,
+								661
 							]
 						],
 						"settings":
@@ -643,25 +585,25 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 918.0,
+						"translation.y": 540.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 6,
-					"file": "/F/Download/Apache UPUPW PHP5.5  UP-A5.0/upupw/vhosts/deliverkindle.com/readium/scripts/templates.js",
+					"buffer": 5,
+					"file": "/F/Download/Apache UPUPW PHP5.5  UP-A5.0/upupw/vhosts/todos.com/todos.js",
 					"settings":
 					{
-						"buffer_size": 16990,
+						"buffer_size": 6710,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								7419,
-								7443
+								2258,
+								2225
 							]
 						],
 						"settings":
@@ -718,7 +660,81 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1290.0,
+						"translation.y": 54.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "/F/Download/Apache UPUPW PHP5.5  UP-A5.0/upupw/vhosts/deliverkindle.com/readium/scripts/views/pagination_strategies/fixed_pagination_view.js",
+					"settings":
+					{
+						"buffer_size": 10421,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3999,
+								3980
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1728.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"

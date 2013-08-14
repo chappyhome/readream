@@ -9,6 +9,16 @@
 
 	$book_list = getBookList($start, $num, $sort, $order, $search);
 
+	$output = array();
+
+	$library = array();
+	$attr = (array)$book_list->attributes();
+	foreach($attr as $k=>$v){
+		$library[$k] = $v;
+	}
+	$library = isset($library['@attributes'])?(array)$library['@attributes']:array();
+
+
 
 	$book = array();
 	$books = array();
@@ -26,7 +36,10 @@
 
 	}
 
+	$output['books']   = $books;
+	$output['library'] = $library;
 
-	echo json_encode($books);
+
+	echo json_encode($output);
 
 	
