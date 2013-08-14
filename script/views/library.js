@@ -1,6 +1,4 @@
-$(function(){
-
-var LibraryItem = Backbone.Model.extend({
+var LibraryModelItem = Backbone.Model.extend({
 	idAttribute: "key",
 	getViewBookUrl: function(book) {
 		return "/views/viewer.html?book=" + this.get('key');
@@ -12,9 +10,9 @@ var LibraryItem = Backbone.Model.extend({
 });
 
 
-var LibraryItems = Backbone.Collection.extend({
+var LibraryModeltems = Backbone.Collection.extend({
 
-	model: LibraryItem
+	model: LibraryModelItem
 	
 });
 
@@ -37,7 +35,6 @@ var LibraryItemView = Backbone.View.extend({
 		return this;
 	}
 });
-
 
 var LibraryItemsView = Backbone.View.extend({
 	tagName: 'div',
@@ -96,35 +93,4 @@ var LibraryItemsView = Backbone.View.extend({
 	events: {
 		
 	}
-});
-
-
-var AppView = Backbone.View.extend({
-		el: $("#readream_app"),
-	}
-
-
-//var  Library = new LibraryItems(window.ReadiumLibraryData);
-var current_library_request = $.ajax({
-      type: "GET",
-      url: "api/get_book_list.php",
-      data: '',
-      cache: false,
-      dataType: "json",
-
-      error : function(XMLHttpRequest, textStatus, errorThrown) {
-          alert('Error: '+textStatus+'\n\n'+errorThrown);
-      },
-
-      success : function(json, textStatus) {
-      	  console.log(json);
-      	  var  Library = new LibraryItems(json);
-      	  var  Lib_view = new LibraryItemsView({collection: Library});
-		  Lib_view.render();
-      }
-  });
-  
-  var getQueryString = window.QueryString;
-
-
 });
