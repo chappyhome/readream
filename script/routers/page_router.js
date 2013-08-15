@@ -3,11 +3,11 @@
 PageRouter = Backbone.Router.extend({
 
 	routes: {
-		"page=:page": "div_page_handle",
+		"/page/:id": "div_page_handle",
 		""         : "div_page_handle"
 	},
 
-	div_page_handle: function(page) {
+	div_page_handle: function(id) {
 		var p         = (page == undefined || page == null) ? 1 : page;
 		var num       = 10;
 		var start     = (p - 1) * num;

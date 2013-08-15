@@ -11,7 +11,7 @@ var LibraryModelItem = Backbone.Model.extend({
 
 
 var LibraryModeltems = Backbone.Collection.extend({
-
+	url: 'api/get_book_list.php',
 	model: LibraryModelItem
 	
 });
@@ -36,6 +36,8 @@ var LibraryItemView = Backbone.View.extend({
 	}
 });
 
+var collection = new LibraryModeltems;
+
 var LibraryItemsView = Backbone.View.extend({
 	tagName: 'div',
 
@@ -45,12 +47,24 @@ var LibraryItemsView = Backbone.View.extend({
 
 	initialize: function() {
 		//this.template = Handlebars.templates.library_items_template;
-		this.collection.bind('reset', this.render, this);
+		//_.bindAll(this, 'get_previous', 'get_next', 'render');
+		//this.collection.bind('refresh', this.render);
 		//this.listenTo(this.collection, "reset", this.render);
-		//this.collection.bind('add',   this.addOne, this);
+		collection.bind('reset',   this.render, this);
+		collection.bind('change',   this.render, this);
+		collection.fetch();
+	},
+
+	refresh: function(page){
+		var p         = (page == undefined || page == null) ? 1 : page;
+		var num       = 10;
+		var start     = (p - 1) * num;
+		window._data  = '?start=' + start + '&num=' + num;
+		collection.url = collection.url + window._data;
+		collection.fetch();
 	},
 	render: function() {
-		var collection = this.collection;
+		//var collection = this.collection;
 		//var content = this.template({});
 		var $el = this.$el;
 		//$el.html(content);
@@ -72,12 +86,6 @@ var LibraryItemsView = Backbone.View.extend({
 		return this;
 	},
 
-	restoreViewType: function() {
-		// restore the setting
-		if(Readium.Utils.getCookie("lib_view") === "block") {
-			this.$el.addClass("block-view").removeClass("row-view");
-		}
-	},
 
 	addOne: function(book) {
 		var view = new LibraryItemView({
@@ -94,3 +102,4 @@ var LibraryItemsView = Backbone.View.extend({
 		
 	}
 });
+

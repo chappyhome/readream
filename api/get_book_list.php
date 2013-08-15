@@ -40,6 +40,6 @@
 	$output['library'] = $library;
 
 
-	echo json_encode($output);
+	echo json_encode($books);
 
 	

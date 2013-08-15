@@ -9,4 +9,4 @@ foreach($attr as $k=>$v){
 }
 $library = isset($library['@attributes'])?(array)$library['@attributes']:array();
 
-echo isset($library['total'])?$library['total']:0;
+echo json_encode($library);
