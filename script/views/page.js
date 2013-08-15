@@ -28,8 +28,8 @@ var LibraryPageView = Backbone.View.extend({
 		//this.model.on("change:page", this.render, this);
 		page.bind('reset',  this.render, this);
 		page.bind('change', this.render, this);
-		page.fetch;
-		console.log(page);
+		//page.fetch;
+		//console.log(page);
 		this.pre_page     = page.get_page_data().pre_page;
 		this.current_page = page.get("page");
 		this.next_page    = page.get_page_data().next_page;

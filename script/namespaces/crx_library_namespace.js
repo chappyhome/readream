@@ -9,10 +9,10 @@ window.Readream = {
 	Utils: {},
 	Init: function() {
 		var page = window.QueryString('page');
-		var p         = (page == undefined || page == null) ? 1 : page;
+		window.p         = (page == undefined || page == null) ? 1 : page;
 	
-		var App = new LibraryItemsView;
-		var Page = new LibraryPageView;
+		var App = new AppView;
+
 		
 
 	}

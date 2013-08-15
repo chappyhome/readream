@@ -36,8 +36,9 @@
 
 	}
 
-	$output['books']   = $books;
-	$output['library'] = $library;
+	//$output['books']   = $books;
+	//$output['library'] = $library;
+	//$books[] = $library;
 
 
 	echo json_encode($books);
