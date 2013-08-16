@@ -2,6 +2,10 @@
 #library-books-list {
   margin-top: 65px;
 }
+
+.span3 .well{
+  margin-top: 65px;
+}
   
 .row-view .book-item {
   width: 100%;
