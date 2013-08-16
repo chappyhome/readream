@@ -33,7 +33,14 @@ var LibraryItemView = Backbone.View.extend({
 var collection = new LibraryModeltems;
 
 var library = Backbone.Model.extend({
-	urlRoot: '/api/get_library_info.php',
+	urlRoot: 'api/get_library_info.php',
+	defaults: {
+		page          :1,
+		pre_page      :1,
+		next_page     :1,
+		total_page_num:0
+
+	}
 });
 var library_info = new library({
 });
@@ -46,39 +53,35 @@ var LibraryPageView = Backbone.View.extend({
 		//add event
 		library_info.bind('reset', this.render, this);
 		library_info.bind('change', this.render, this);
-		console.log("library_info1111");
-		library_info.fetch();
+		library_info.bind('change:total', this.refresh_model_info, this);
+		library_info.fetch({reset: true});
 	},
 
-	get_page_info: function(){
-		var page    = window.QueryString('page');
+	refresh_model_info: function(){
+		var page    = library_info.get("page");
 		this.p      = (page == undefined || page == null) ? 1 : page;
 		this.total  = library_info.get('total');
-		this.total_num = parseInt(this.total/10) + 1;
+		total_page_num = parseInt(parseInt(this.total)/10) + 1;
 
-		library_info.set("page", this.p);
+		var new_pre_page = parseInt(this.p) - 1;
+		pre_page = (new_pre_page <= 1) ? 1 : new_pre_page;
+		var new_next_page = parseInt(this.p) + 1;
+		next_page = (new_next_page >= this.total_num) ? this.total_num : new_next_page;
 
-		var new_pre_page = this.p - 1;
-		this.pre_page = (new_pre_page <= 1) ? 1 : new_pre_page;
-		var new_next_page = this.p + 1;
-		this.next_page = (new_next_page >= this.total_num) ? this.total_num : new_next_page;
-
-		var data = {};
-		data['pre_page'] = this.pre_page;
-		data['next_page'] = this.next_page;
-		data['total_page'] = this.total_num;
-		return data;
+		library_info.set("pre_page",pre_page);
+		library_info.set("next_page",next_page);
+		library_info.set("total_page_num",total_page_num);
 	},
 
 	render: function() {
+		//console.log(library_info.get("total"));
 		//var $el = this.$el;
 		var renderedContent = this.template({
-			data: this.get_page_info()
+			data: library_info.toJSON()
 		});
 		$(this.el).html(renderedContent);
 		$('#library-div-page').html($(this.el));
 		//this.render_page_button();
-		console.log(library_info.get('total'));
 		return this;
 	},
 
@@ -92,23 +95,31 @@ var LibraryPageView = Backbone.View.extend({
 
 	home_handle : function(e) {
 		e.preventDefault();
+		var home = 1;
+		library_info.set("page",home);
 		//alert('home');
 	},
 	pre_handle : function(e) {
 		e.preventDefault();
-		alert('pre');
+		var pre_page = library_info.get("pre_page");
+		library_info.set("page",pre_page);
+		//alert('pre');
 	},
 	next_handle : function(e) {
 		e.preventDefault();
-		alert('next');
+		var next_page = library_info.get("next_page");
+		library_info.set("page",next_page);
+		//console.log(library_info);
+		//alert('next');
 	},
 	last_handle : function(e) {
 		e.preventDefault();
-		alert('last');
+		var total_page_num = library_info.get("total_page_num");
+		library_info.set("page",total_page_num);
 	}
 });
 
-var page = new LibraryPageView();
+//pageView.refresh_model_info();
 
 var AppView = Backbone.View.extend({
 	tagName: 'div',
@@ -118,31 +129,36 @@ var AppView = Backbone.View.extend({
 	className: 'row-view',
 
 	initialize: function() {
-		console.log("HHHH");
 		library_info.bind('reset', this.render, this);
-		library_info.bind('change:page', this.render, this);
+		library_info.bind('change', this.render, this);
+		//library_info.bind('change:page', this.refresh_data, this);
 		collection.bind('reset', this.render, this);
 		collection.bind('change', this.render, this);
-		collection.fetch();
+		//collection.fetch({reset: true});
+
+		console.log(collection);
+
+		var page = window.QueryString('page');
+		var p = (page == undefined || page == null) ? 1 : page;
+		library_info.set({"page":parseInt(p)});
+		this.refresh_data();
+
+		this.pageView = new LibraryPageView();
+		this.pageView.refresh_model_info();
 	
 	},
 
-	refresh: function(page) {
-		var p = (page == undefined || page == null) ? 1 : page;
+	refresh_data: function(page) {
+		var p = library_info.get("page");
 		var num = 10;
-		var start = (p - 1) * num;
+		var start = (parseInt(p) - 1) * num;
 		window._data = '?start=' + start + '&num=' + num;
-		collection.url = collection.url + window._data;
-		collection.fetch();
+		collection.url = 'api/get_book_list.php' + window._data;
+		collection.fetch({reset: true});
+		this.render();
 	},
 	render: function() {
-		//var collection = this.collection;
-		//var content = this.template({});
 		var $el = this.$el;
-		//$el.html(content);
-
-		//this.$('#empty-message').toggle(collection.isEmpty());
-
 		collection.each(function(item) {
 			var view = new LibraryItemView({
 				model: item,
@@ -150,30 +166,10 @@ var AppView = Backbone.View.extend({
 				id: item.get('id')
 			});
 			$el.append(view.render().el);
-			//console.log(item.get('desc'));
 
 		});
 
-		//console.log(library_info);
-		//this.restoreViewType();
-		// i dunno if this should go here
 		$('#library-books-list').html(this.el);
 		return this;
-	},
-
-
-	addOne: function(book) {
-		var view = new LibraryItemView({
-			model: book,
-			collection: this.collection,
-			id: book.get('id')
-		});
-		// we are adding so this should always be hidden!
-		this.$('#empty-message').toggle(false);
-		$(this.el).append(view.render().el);
-	},
-
-	events: {
-
 	}
 });
