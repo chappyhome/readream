@@ -61,27 +61,44 @@ var LibraryPageView = Backbone.View.extend({
 		var page    = library_info.get("page");
 		this.p      = (page == undefined || page == null) ? 1 : page;
 		this.total  = library_info.get('total');
-		total_page_num = parseInt(parseInt(this.total)/10) + 1;
+		this.total_page_num = parseInt(parseInt(this.total)/10) + 1;
 
 		var new_pre_page = parseInt(this.p) - 1;
 		pre_page = (new_pre_page <= 1) ? 1 : new_pre_page;
 		var new_next_page = parseInt(this.p) + 1;
-		next_page = (new_next_page >= this.total_num) ? this.total_num : new_next_page;
+		next_page = (new_next_page >= this.total_page_num) ? this.total_page_num : new_next_page;
+
+		//console.log(next_page);
+		//console.log(this.total_page_num);
 
 		library_info.set("pre_page",pre_page);
 		library_info.set("next_page",next_page);
-		library_info.set("total_page_num",total_page_num);
+		library_info.set("total_page_num",this.total_page_num);
 	},
 
 	render: function() {
-		//console.log(library_info.get("total"));
 		//var $el = this.$el;
+
 		var renderedContent = this.template({
 			data: library_info.toJSON()
 		});
 		$(this.el).html(renderedContent);
 		$('#library-div-page').html($(this.el));
-		//this.render_page_button();
+
+		var page    = library_info.get("page");
+		var total_page_num    = library_info.get("total_page_num");
+		//console.log(page);
+
+		if(page == total_page_num){
+			console.log("next_page");
+			this.$("li:eq(2)").removeClass("active").addClass("disabled");
+			this.$("li:last").removeClass("active").addClass("disabled");
+		}
+
+		if(page == 1){
+			this.$("li:first").removeClass("active").addClass("disabled");
+			this.$("li:eq(1)").removeClass("active").addClass("disabled");
+		}
 		return this;
 	},
 
@@ -94,28 +111,47 @@ var LibraryPageView = Backbone.View.extend({
 	},
 
 	home_handle : function(e) {
+		e.stopPropagation();
 		e.preventDefault();
+		
+		var page = library_info.get("page");
 		var home = 1;
-		library_info.set("page",home);
+		if(page > home){
+			library_info.set("page",home);
+		}
 		//alert('home');
 	},
 	pre_handle : function(e) {
+		e.stopPropagation();
 		e.preventDefault();
+		
 		var pre_page = library_info.get("pre_page");
-		library_info.set("page",pre_page);
+		if(pre_page > 1){
+			library_info.set("page",pre_page);
+		}
 		//alert('pre');
 	},
 	next_handle : function(e) {
+		e.stopPropagation();
 		e.preventDefault();
+		
 		var next_page = library_info.get("next_page");
-		library_info.set("page",next_page);
-		//console.log(library_info);
+		var total_page_num = library_info.get("total_page_num");
+
+		console.log("page before:" + library_info.get("page"));
+		if(next_page < total_page_num){
+			library_info.set("page",next_page);
+		}		
 		//alert('next');
 	},
 	last_handle : function(e) {
+		e.stopPropagation();
 		e.preventDefault();
+		var page = library_info.get("page");
 		var total_page_num = library_info.get("total_page_num");
-		library_info.set("page",total_page_num);
+		if(page < total_page_num){
+			library_info.set("page",total_page_num);
+		}
 	}
 });
 
@@ -129,22 +165,20 @@ var AppView = Backbone.View.extend({
 	className: 'row-view',
 
 	initialize: function() {
-		library_info.bind('reset', this.render, this);
-		library_info.bind('change', this.render, this);
+		this.pageView = new LibraryPageView();
+		//library_info.bind('reset', this.render, this);
+		//library_info.bind('change', this.render, this);
+		library_info.bind('change:total', this.pageView.refresh_model_info, this);
 		//library_info.bind('change:page', this.refresh_data, this);
 		collection.bind('reset', this.render, this);
 		collection.bind('change', this.render, this);
-		//collection.fetch({reset: true});
-
-		console.log(collection);
 
 		var page = window.QueryString('page');
 		var p = (page == undefined || page == null) ? 1 : page;
-		library_info.set({"page":parseInt(p)});
+		library_info.set({"page":parseInt(p),reset: true});
 		this.refresh_data();
-
-		this.pageView = new LibraryPageView();
-		this.pageView.refresh_model_info();
+		
+		console.log("app:" + library_info.get("page"));
 	
 	},
 
@@ -155,6 +189,7 @@ var AppView = Backbone.View.extend({
 		window._data = '?start=' + start + '&num=' + num;
 		collection.url = 'api/get_book_list.php' + window._data;
 		collection.fetch({reset: true});
+
 		this.render();
 	},
 	render: function() {

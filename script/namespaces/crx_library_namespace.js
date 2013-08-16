@@ -8,13 +8,7 @@ window.Readream = {
 	Routers: {},
 	Utils: {},
 	Init: function() {
-		//var page = window.QueryString('page');
-		//window.p         = (page == undefined || page == null) ? 1 : page;
-	
 		var App = new AppView;
-
-		
-
 	}
 };
 
