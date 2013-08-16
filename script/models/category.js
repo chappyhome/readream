@@ -9,21 +9,53 @@ var ReadreamModelCategorys = Backbone.Collection.extend({
 
 var categorys_info = new ReadreamModelCategorys;
 
+var ReadreamViewCategory = Backbone.View.extend({
+	tagName: 'ul',
 
+	className: "dropdown-menu",
 
-var Test = Backbone.View.extend({
+	initialize: function() {
+		this.template = _.template($('#library_category_drop_template').html());
+	},
+
+	render: function() {
+		var that = this;
+		var $el = this.$el;
+		this.collection.each(function(item) {
+			var renderedContent = that.template({
+				data: item.toJSON()
+			});
+			$el.append(renderedContent);
+		});
+		return this;
+	}
+});
+
+var ReadreamViewCategorys = Backbone.View.extend({
 	initialize: function() {
 		categorys_info.bind('reset', this.render, this);
 		categorys_info.bind('change', this.render, this);
 		categorys_info.fetch();
-		console.log(categorys_info);
+		//console.log(categorys_info);
 	},
+
 	render: function() {
-		console.log('OK');
-		categorys_info.each(function(item) {
-			console.log(item.get('name'));
-		});
+		var category_view = new ReadreamViewCategory({
+			collection:categorys_info
+		})
+		$('#readream_category_list').append(category_view.render().el);
+		return this;
+	},
+
+	events:{
+		"change .dropdown-menu a"   : "category_handle",
+	},
+
+	category_handle : function(e) {
+		//e.stopPropagation();
+		//e.preventDefault();
+		alert('accept');
 	}
 });
 
-var test = new Test;
+var test = new ReadreamViewCategorys;

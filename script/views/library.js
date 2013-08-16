@@ -178,7 +178,7 @@ var AppView = Backbone.View.extend({
 		library_info.set({"page":parseInt(p),reset: true});
 		this.refresh_data();
 		
-		console.log("app:" + library_info.get("page"));
+		//console.log("app:" + library_info.get("page"));
 	
 	},
 
