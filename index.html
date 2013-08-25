@@ -7,55 +7,6 @@
 
     <!-- This is all application-specific HTML -->
     <body>
-    <div class="container-fluid">
-  <div class="row-fluid">
-    <div class="span3">
-      <!--Sidebar content-->
-      <div class="well sidebar-nav">
-        <div id="readream_category_list" class="btn-group">
-                <button class="btn btn-small dropdown-toggle" data-toggle="dropdown">Category <span class="caret"></span></button> 
-        </div>
-
-            <ul class="nav nav-list">
-              <li class="nav-header">Sidebar</li>
-              <li class="active"><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li class="nav-header">Sidebar</li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li class="nav-header">Sidebar</li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li class="nav-header">Sidebar</li>
-              <li class="active"><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li class="nav-header">Sidebar</li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li class="nav-header">Sidebar</li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-
-            </ul>
-          </div>
-    </div>
-
-
-    <div class="span9">
     <div id='readream_app'>
         <!-- The navbar -->
         <div class="navbar navbar-fixed-top" id="toolbar-el">
@@ -80,13 +31,18 @@
 
                         <!-- The library for the sample reader -->
                         <li>
-                            <a accesskey="n" href="#" id="epub-demo-library" role="button" title="Demo Library" class="dropdown-toggle" data-toggle="dropdown">
-                                <img src="images/options.png" class="nav-icon" id="library-ico">
+                            <a accesskey="n" href="#" id="epub-demo-library" role="button" title="Category List" class="dropdown-toggle" data-toggle="dropdown">
+                                <img src="images/table_of_contents_medium.png" class="nav-icon" id="library-ico">
                             </a>
-                            <!-- <ul id="library-list" class="dropdown-menu" role="menu" aria-labelledby="dlabel"> -->
+                             <ul id="category-list" class="dropdown-menu" role="menu" aria-labelledby="dlabel"> </ul>
                             </ul>
+                         </li>
+                          </ul>  
+
+                   
                      
                 </div>
+             
             </div>
         </div>
 
@@ -99,13 +55,10 @@
 
         <div id="library-div-page" class="pagination pagination-centered">
         </div>
-</div>
-
-
 
   </div>
-  </div>
-</div>
+
+
 <!-- Templates -->
   <script type="text/template" id="library_item_template">
     <div class="info-wrap">
@@ -116,6 +69,10 @@
     </div>
     
     <img class="cover-image read" src="http://img.readream.com:8080/get/cover/<%- data.id %>"  alt="<%- data.title %>">
+
+    <a href="#details-modal-aaa755747fe72b3af693053a17bfa3c7" class="info-icon" aria-pressed="true" data-toggle="modal" role="button">
+    <img class="info-icon pull-right" src="images/info-icon.png" height="39px" width="39px" alt="译言 [周六, 03 八月 2013] information">
+    </a>
 </div>
   </script>
   <script type="text/template" id="library_divpage_template">
@@ -126,7 +83,7 @@
   </script>
 
    <script type="text/template" id="library_category_drop_template">
-         <li><a address="<%- data.url %>"><%- data.name %></a></li>
+         <li><a href="#" address="<%- data.url %>"><%- data.name %></a></li>
    </script>
 
 

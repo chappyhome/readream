@@ -1,3 +1,3 @@
 <?php
-	$url = 'http://localhost:8080/ajax/categories';
-	echo  file_get_contents($url);
+	require_once "constant.php";
+	echo  file_get_contents($categories_url);

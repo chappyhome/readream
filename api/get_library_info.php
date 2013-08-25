@@ -1,4 +1,5 @@
 <?php
+require_once "constant.php";
 require_once "common.php";
 
 $book_list = getBookList(0, 1);

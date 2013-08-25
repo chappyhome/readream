@@ -1,4 +1,5 @@
 <?php
+	require_once "constant.php";
 	require_once "common.php";
 
 	$start = (isset($_REQUEST['start']))?$_REQUEST['start']:0;

@@ -10,9 +10,7 @@ var ReadreamModelCategorys = Backbone.Collection.extend({
 var categorys_info = new ReadreamModelCategorys;
 
 var ReadreamViewCategory = Backbone.View.extend({
-	tagName: 'ul',
-
-	className: "dropdown-menu",
+	el : "#category-list",
 
 	initialize: function() {
 		this.template = _.template($('#library_category_drop_template').html());
@@ -27,11 +25,14 @@ var ReadreamViewCategory = Backbone.View.extend({
 			});
 			$el.append(renderedContent);
 		});
+		
 		return this;
 	}
 });
 
 var ReadreamViewCategorys = Backbone.View.extend({
+	el: "#category-list",
+
 	initialize: function() {
 		categorys_info.bind('reset', this.render, this);
 		categorys_info.bind('change', this.render, this);
@@ -43,18 +44,19 @@ var ReadreamViewCategorys = Backbone.View.extend({
 		var category_view = new ReadreamViewCategory({
 			collection:categorys_info
 		})
-		$('#readream_category_list').append(category_view.render().el);
+		category_view.render();
+		// this.$el.on('click', function (e) {
+		// 		alert($(e.currentTarget).attr("href"));
+		// 	});
 		return this;
 	},
 
 	events:{
-		"change .dropdown-menu a"   : "category_handle",
+		"click a"   : "category_handle"
 	},
 
 	category_handle : function(e) {
-		//e.stopPropagation();
-		//e.preventDefault();
-		alert('accept');
+		console.log($(e.currentTarget).attr("address"));
 	}
 });
 
