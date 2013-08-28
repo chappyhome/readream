@@ -4,7 +4,7 @@ var LibraryModelItem = Backbone.Model.extend({
 
 
 var LibraryModeltems = Backbone.Collection.extend({
-	url: 'api/get_book_list.php',
+	url: 'get_book_list',
 	model: LibraryModelItem
 
 });
@@ -33,7 +33,7 @@ var LibraryItemView = Backbone.View.extend({
 var collection = new LibraryModeltems;
 
 var library = Backbone.Model.extend({
-	urlRoot: 'api/get_library_info.php',
+	urlRoot: 'get_library_total',
 	defaults: {
 		page          :1,
 		pre_page      :1,
@@ -188,10 +188,10 @@ var AppView = Backbone.View.extend({
 
 	refresh_data: function(page) {
 		var p = library_info.get("page");
-		var num = 10;
-		var start = (parseInt(p) - 1) * num;
-		window._data = '?start=' + start + '&num=' + num;
-		collection.url = 'api/get_book_list.php' + window._data;
+		//var num = 10;
+		//var start = (parseInt(p) - 1) * num;
+		//window._data = '?start=' + start + '&num=' + num;
+		collection.url = 'get_book_list/' + p;
 		collection.fetch({reset: true});
 
 		this.render();
