@@ -37,17 +37,18 @@ function handle() {
 
 			riqi=`date +%Y%m%d`
 		    echo `date +%Y-%m-%d" "%T`" "${dir} >>/data/log/${riqi}".log"
-
+		    
 			cp  "${file}"  "${f}"
 			basename=`basename "${dir}"`
-			unzipdir="/tmp/test/${basename}"
+			unzipdir="/var/www/html/epub_content/${basename}"
 			unzip -o "${f}" -d "${unzipdir}" > /dev/null 2>&1
-			
-			opf=`find "${unzipdir}" -type f -name *.opf`
 			sleep 10
+			opf=`find "${unzipdir}" -type f -name *.opf`
+
+			value=${opf/\/var\/www\/html\//}
 			key="calibre_book_"${bookid}
-			redis-cli rpush booklist ${key} > /dev/null 2>&1
-			redis-cli set  ${key} "${opf}" > /dev/null 2>&1
+			redis-cli rpush booklist1 ${key} > /dev/null 2>&1
+			redis-cli set  ${key} "${value}" > /dev/null 2>&1
 		fi
 }
 

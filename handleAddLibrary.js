@@ -1,14 +1,23 @@
-var redis = require("redis");
-var client = redis.createClient();
-var fs = require('fs');
-var path = require('path');
-var Inotify = require('inotify').Inotify;
-var inotify = new Inotify();
-var spawn = require('child_process').spawn;
+var redis = require("redis"),
+    client = redis.createClient(),
+    parseString = require('xml2js').Parser().parseString,
+    http = require("http"),
+    fs = require('fs'),
+    path = require('path'),
+    Inotify = require('inotify').Inotify,
+    inotify = new Inotify(),
+    spawn = require('child_process').spawn,
 
-var watchPath = '/root/Dropbox/calibre';
-var parameter = ["-m", "-r", "-q", '--timefmt', '%d/%m/%y %H:%M', '--format', '%w%f', '-e', 'moved_to,create', watchPath];
-var inotifyWatch = spawn("inotifywait", parameter);
+    watchPath = '/root/Dropbox/calibre',
+    parameter = ["-m", "-r", "-q", '--timefmt', '%d/%m/%y %H:%M', '--format', '%w%f', '-e', 'moved_to,create', watchPath],
+    inotifyWatch = spawn("inotifywait", parameter);
+
+
+var PAGE_BASIC_INFO = 'calibre_page_basic_info',
+    BASE_DATA_URL = 'http://www.deliverkindle.com:8080/xml',
+    EPUB_UNZIP_CONTENT = '/var/www/html/epub_content/',
+    //BOOK_LIBRARY = '/tmp/book';
+    BOOK_LIBRARY = '/root/all_book_library/Calibre';
 
 
 inotifyWatch.stdout.setEncoding("utf8");
@@ -21,13 +30,13 @@ inotifyWatch.stdout.on("data", function(data) {
       if(ext == '.epub'){
           var dir = path.dirname(line);
           var file_path = line;
-          var parameter = ['add' , dir  ,'--library-path', '/tmp/book'];
+          var parameter = ['add' , dir  ,'--library-path', BOOK_LIBRARY];
           calibredb = spawn("calibredb", parameter);
           calibredb.stdout.setEncoding("utf8");
           calibredb.stdout.on("data", function(data) {
               var bookid = data;
               basename = path.basename(dir);
-              output  = '/tmp/test/' + basename;
+              output  = EPUB_UNZIP_CONTENT + basename;
 
               console.log(file_path);
               console.log(bookid);
@@ -44,8 +53,9 @@ inotifyWatch.stdout.on("data", function(data) {
                       var items = data.split("\n");
                       if(items.length>0){
                         key = "calibre_book_" + bookid;
-                        client.rpush("booklist",key);
-                        client.set(key,items[0]);
+                        client.rpush("booklist1",key);
+                        var value = items[0].replace(/\/var\/www\/html\//,"");
+                        client.set(key,value);
                       }
                       
                   });
