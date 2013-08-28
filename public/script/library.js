@@ -48,6 +48,13 @@ var library_info = new library({
 var LibraryPageView = Backbone.View.extend({
 	tagName: 'ul',
 
+	events:{
+		"click #page_home.a"   : "home_handle",
+		"click #page_pre"    : "pre_handle",
+		"click #page_next"   : "next_handle",
+		"click #page_last"   : "last_handle"
+	},
+
 	initialize: function() {
 		this.template = _.template($('#library_divpage_template').html());
 		//add event
@@ -102,24 +109,18 @@ var LibraryPageView = Backbone.View.extend({
 		return this;
 	},
 
-	events:{
-		"click #page_home"   : "home_handle",
-		"click #page_pre"    : "pre_handle",
-		"click #page_next"   : "next_handle",
-		"click #page_last"   : "last_handle"
-	
-	},
 
 	home_handle : function(e) {
+		e.stopPropagation();
 		e.preventDefault();
 
 		alert('aaaa');
 		
-		var page = library_info.get("page");
+		/*var page = library_info.get("page");
 		var home = 1;
 		if(page > home){
 			library_info.set("page",home);
-		}
+		}*/
 		//alert('home');
 	},
 	pre_handle : function(e) {

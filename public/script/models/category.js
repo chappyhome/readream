@@ -31,7 +31,11 @@ var ReadreamViewCategory = Backbone.View.extend({
 });
 
 var ReadreamViewCategorys = Backbone.View.extend({
-	el: "#category-list",
+	el: "#accordion2",
+
+	events:{
+		"click a.accordion-toggle"   : "categoryhandle"
+	},
 
 	initialize: function() {
 		categorys_info.bind('reset', this.render, this);
@@ -51,14 +55,10 @@ var ReadreamViewCategorys = Backbone.View.extend({
 		return this;
 	},
 
-	events:{
-		"click a.accordion-toggle"   : "categoryhandle"
-	},
-
 	categoryhandle : function(e) {
-		alert('bbb');
-		//e.preventDefault();
-		console.log("iiii");
+		//alert('bbb');
+		e.preventDefault();
+		//console.log("iiii");
 		console.log($(e.currentTarget).attr("address"));
 	}
 });
