@@ -7,6 +7,19 @@
 
     <!-- This is all application-specific HTML//          -->
     <body>
+<div class="row-fluid">
+        <div class="span3">
+          <div class="well sidebar-nav">
+           <div>All books</div>
+            <div class="accordion" id="accordion2">
+             
+            </div>   <!--/.accordion2 -->
+
+
+
+          </div><!--/.well -->
+        </div><!--/span-->
+        <div class="span9">
     <div id='readream_app'>
         <!-- The navbar -->
         <div class="navbar navbar-fixed-top" id="toolbar-el">
@@ -58,6 +71,9 @@
 
   </div>
 
+        </div><!--/.span9 -->
+        </div><!--/row-fluid-->
+
 
 <!-- Templates -->
   <script type="text/template" id="library_item_template">
@@ -88,6 +104,24 @@
          <li><a href="#" address="<%- data.url %>"><%- data.name %></a></li>
    </script>
 
+   <script type="text/template" id="library_subcategory_list_template">
+         <li><a href="#" address="<%- data.url %>"><%- data.name %></a></li>
+   </script>
+
+   <script type="text/template" id="library_category_list_template">
+             <div class="accordion-group">
+                  <div class="accordion-heading">
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#" address="<%- data.url %>">
+                      <%- data.name %>
+                    </a>
+                  </div>
+                  <div id="collapseThree" class="accordion-body in collapse" style="height: 0px;">
+                    <div class="accordion-inner">
+                    </div>
+                  </div>
+            </div>
+   </script>
+
 
     <script src="lib/jquery.min.js" type="text/javascript"></script>
     <script src="lib/json2.js" type="text/javascript"></script>
@@ -98,9 +132,9 @@
     <!-- Readium Web Components SimpleRWC.js -->
     <script src="script/utils/request.js" type="text/javascript"></script>
     <script src="script/routers/page_router.js" type="text/javascript"></script>
-    <script src="lib/SimpleReadium.min.js" type="text/javascript"></script>
+    <!--<script src="lib/SimpleReadium.min.js" type="text/javascript"></script>-->
     <script src="script/library.js" type="text/javascript"></script>
-    <!-- <script src="script/models/category.js" type="text/javascript"></script>-->
+    <script src="script/models/category.js" type="text/javascript"></script>
    <!--  <script src="script/views/page.js" type="text/javascript"></script> -->
     <script src="script/namespaces/crx_library_namespace.js" type="text/javascript"></script>
     </body>

@@ -5,8 +5,9 @@ var redis = require("redis"),
 
 var PAGE_PREFIX = 'calibre_page_',
 	CALIBRE_LIBRARY_TOTAL = 'calibre_library_total',
-	BASE_DATA_URL = 'http://www.deliverkindle.com:8080/xml',
+	BASE_DATA_URL = 'http://www.deliverkindle.com:8080',
 	PAGE_BOOK_NUMBER = 10;
+	DISPLAY_CATEGORY = ['Rating','News','Series'];
 
 exports.getBookList = function(req, res) {
 	var page = (req.params.page != undefined || req.params.page != null)?req.params.page: 1;
@@ -14,7 +15,7 @@ exports.getBookList = function(req, res) {
 	var key = PAGE_PREFIX + page;
 	 client.get(key,function(err, reply){
 	 	if(reply == null || err){
-	 		http.get(BASE_DATA_URL + "?start=0&num=1", function(res) {
+	 		http.get(BASE_DATA_URL + "/xml?start=0&num=1", function(res) {
 	 			res.setEncoding('utf8');
 	 			res.on('data', function(data) {
 	 				parseString(data, function (err, result) {
@@ -58,7 +59,7 @@ exports.getBookList = function(req, res) {
 exports.updateLibraryTotal = function() {
 	client.get(CALIBRE_LIBRARY_TOTAL,function(err, reply){
 			if(!reply || err){
-				http.get(BASE_DATA_URL + "?start=0&num=1", function(reply) {
+				http.get(BASE_DATA_URL + "/xml?start=0&num=1", function(reply) {
 					reply.setEncoding('utf8');
 					reply.on('data', function(data) {
 						parseString(data, function (err, result) {
@@ -77,7 +78,7 @@ exports.updateLibraryTotal = function() {
 exports.getLibraryTotal = function(req, res) {
 	client.get(CALIBRE_LIBRARY_TOTAL,function(err, reply){
 		if(!reply || err){
-			http.get(BASE_DATA_URL + "?start=0&num=1", function(reply) {
+			http.get(BASE_DATA_URL + "/xml?start=0&num=1", function(reply) {
 				reply.setEncoding('utf8');
 				reply.on('data', function(data) {
 					parseString(data, function (err, result) {
@@ -95,5 +96,38 @@ exports.getLibraryTotal = function(req, res) {
 		}
 	});
 
+};
+
+exports.getCategoryList = function(req, res) {
+	http.get(BASE_DATA_URL + "/ajax/categories", function(reply) {
+		reply.setEncoding('utf8');
+		reply.on('data', function(data) {
+			var list = JSON.parse(data),
+				o = [];
+			for(var i = 0; i < list.length; i++){
+				var name = list[i].name;
+				    url = list[i].url;
+				    arr = url.split("/");
+				    list[i].url = arr[3];
+				if(DISPLAY_CATEGORY.indexOf(name) >= 0){
+					o.push(list[i]);
+				}
+			}
+			res.send(o);
+		});
+	});
+};
+
+exports.getCategoryDetail = function(req, res) {
+	var id = req.params.id;
+	console.log(BASE_DATA_URL + "/ajax/category/"+id);
+	http.get(BASE_DATA_URL + "/ajax/category/"+id, function(reply) {
+		reply.setEncoding('utf8');
+		reply.on('data', function(data) {
+			var list = JSON.parse(data);
+			res.send(list);
+			//res.send('OK');
+		});
+	});
 };
 

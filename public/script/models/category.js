@@ -2,7 +2,7 @@ var ReadreamModelCategory = Backbone.Model.extend({
 });
 
 var ReadreamModelCategorys = Backbone.Collection.extend({
-	url: 'api/get_category_info.php',
+	url: 'get_category_list',
 	model: ReadreamModelCategory
 
 });
@@ -10,10 +10,10 @@ var ReadreamModelCategorys = Backbone.Collection.extend({
 var categorys_info = new ReadreamModelCategorys;
 
 var ReadreamViewCategory = Backbone.View.extend({
-	el : "#category-list",
+	el : "#accordion2",
 
 	initialize: function() {
-		this.template = _.template($('#library_category_drop_template').html());
+		this.template = _.template($('#library_category_list_template').html());
 	},
 
 	render: function() {
@@ -52,10 +52,13 @@ var ReadreamViewCategorys = Backbone.View.extend({
 	},
 
 	events:{
-		"click a"   : "category_handle"
+		"click a.accordion-toggle"   : "categoryhandle"
 	},
 
-	category_handle : function(e) {
+	categoryhandle : function(e) {
+		alert('bbb');
+		//e.preventDefault();
+		console.log("iiii");
 		console.log($(e.currentTarget).attr("address"));
 	}
 });

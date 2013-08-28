@@ -111,8 +111,9 @@ var LibraryPageView = Backbone.View.extend({
 	},
 
 	home_handle : function(e) {
-		e.stopPropagation();
 		e.preventDefault();
+
+		alert('aaaa');
 		
 		var page = library_info.get("page");
 		var home = 1;

@@ -16,6 +16,8 @@ app.configure('development', function () {
 });
  
 app.get('/get_book_list/:page?', api.getBookList);
+app.get('/get_category_list', api.getCategoryList);
+app.get('/get_category_detail/:id', api.getCategoryDetail);
 app.get('/get_library_total', api.getLibraryTotal);
 
 setTimeout(api.updateLibraryTotal, 300000);
