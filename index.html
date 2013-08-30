@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/readream.css">
+    </head>
+    <body>
+    <div id="header">
+    	<div class="navbar navbar-fixed-top" id="toolbar-el">
+            <div class="navbar-inner" id="top-bar" style="">
+                <div class="container" style="width: 100%">
+                    <!-- Navbar contents -->
+                    <ul class="nav pull-right">             
+                       <li>
+                            <a accesskey="n" href="#" id="next-page-btn" role="button" title="Next Page">
+                                <img src="images/list_view.png" class="nav-icon" id="arrow-next-ico">
+                            </a>
+                        </li>
+                         <li>
+                            <a accesskey="n" href="#" id="next-page-btn" role="button" title="Next Page">
+                                <img src="images/thumb_view.png" class="nav-icon" id="arrow-next-ico">
+                            </a>
+                        </li>
+
+                        <li class="divider-vertical"></li>
+
+                        <!-- The library for the sample reader -->
+                        <li>
+                            <a accesskey="n" href="#" id="epub-demo-library" role="button" title="Category List" class="dropdown-toggle" data-toggle="dropdown">
+                                <img src="images/table_of_contents_medium.png" class="nav-icon" id="library-ico">
+                            </a>
+                             <ul id="category-list" class="dropdown-menu" role="menu" aria-labelledby="dlabel"> </ul>
+                            </ul>
+                         </li>
+                          </ul>           
+                </div>
+             
+            </div>
+        </div>
+    </div>
+    	<section id="readream_app">
+			<section id="main"></section>
+			<footer id="pager" style="display: block;"></footer>
+		</section>
+		<footer id="info">
+			<p>
+				Created by <a href="http://github.com/chappyhome">David.peng</a>.
+			</p>
+		</footer>
+
+		
+
+		<script type="text/template" id="template-bookListCompositeView">
+			<div id="library-books-list"  >
+                <div id="loading-message">
+                    <h2>Loading Library</h2>
+                    <img src="images/ajax-loader.gif" alt="loading..." height="42" width="42" />
+                </div>
+                <ul id="book-list"></ul>
+        	</div>
+		</script>
+
+		  <script type="text/template" id="template-bookView">
+			    <div class="info-wrap">
+				    <a href="view.html?id=<%- data.id %>"  id="readerID">
+				    <div class="caption book-info">
+				        <h2 class="green info-item title"><%- data.title %></h2>
+				        <div class="info-item author"><%= authors %></div>
+				        <div class="info-item formats"><%= formats %></div> 
+				    </div>
+				    
+				    <img class="cover-image read" src="http://www.deliverkindle.com:8080/get/cover/<%= id %>"  alt="<%= title %>">
+				    </a>
+
+				    <a href="#details-modal-aaa755747fe72b3af693053a17bfa3c7" class="info-icon" aria-pressed="true" data-toggle="modal" role="button">
+				    <img class="info-icon pull-right" src="images/info-icon.png" height="39px" width="39px" alt="<%= title %>">
+				    </a>
+				</div>
+  		</script>
+		<script type="text/template" id="template-footerpageCompositeView">
+		 <div id="library-div-page" class="pagination pagination-centered">
+		 <ul>
+		   <li><a href="?page=1">HOME</a></li>
+        	<li><a href="?page=<%= pre_page %>">Previous</a></li>
+        	<li><a href="?page=<%= next_page %>">Next</a></li>
+        	<li><a href="?page=<%= total_page_num %>">Last</a></li>
+		 </ul>
+        </div>
+		</script>
+
+		<script type="text/template" id="template-testView">
+			<p>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</p>
+		</script>
+
+		<script src="lib/jquery.min.js"></script>
+		<script src="lib/lodash.min.js"></script>
+		<script src="js/lib/backbone.js"></script>
+		<script src="js/lib/backbone-localStorage.js"></script>
+		<script src="js/lib/backbone.marionette.js"></script>
+		<!-- application -->
+		<script src="js/Readream.js"></script>
+		<script src="js/Readream.layout.js"></script>
+		<script src="js/Readream.controller.js"></script>
+		<script src="js/Readream.books.model.js"></script>
+		<script src="js/Readream.books.view.js"></script>
+		<script>
+				Readream.start();
+		</script>
+	</body>
+</html>
