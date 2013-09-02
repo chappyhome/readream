@@ -42,6 +42,54 @@ inotifyWatch.stdout.on("data", function(data) {
               console.log(bookid);
               console.log(output);
 
+              if(bookid != undefined || bookid != null){
+                    client.get(PAGE_BASIC_INFO,function(err, reply){
+                      if(reply != undefined || reply != null){
+                           var basic_obj = JSON.parse(reply),
+                               total = basic_obj.total||0,
+                               //total = 951;
+                               num = basic_obj.num||10,
+                               pages = basic_obj.pages||0,
+                               page_prefix = basic_obj.page_prefix||"calibre_page_";
+                           basic_obj.total = total + 1;
+                           basic_obj.pages  = Math.ceil(basic_obj.total/num);
+                           client.set(PAGE_BASIC_INFO, JSON.stringify(basic_obj));
+
+                           //update
+                           var before_total = total - 1;
+                           var url = BASE_DATA_URL + "?start=" + before_total +  "&num=1";
+                           console.log(url);
+                           http.get(url, function(res) {
+                              res.setEncoding('utf8');
+                              res.on('data', function(data) {
+                                    parseString(data, function (err, result) {
+                                      console.log(result);
+                                      var book = result.library.book[0];
+                                      if(book != null){
+                                          var item = book.$;
+                                              item['desc'] = book._;
+                                          var last_page = page_prefix + basic_obj.pages;
+                                          client.get(last_page,function(err, reply){
+                                              if(reply != undefined || reply != null){
+                                                 var page_item = JSON.parse(reply);
+                                                 page_item.push(item);
+                                               }else{
+                                                  var page_item = [];
+                                                  page_item.push(item);
+                                               }
+                                               client.set(last_page, JSON.stringify(page_item));
+                                          });
+                                        }
+
+                                  });
+                              
+                              });
+
+                          });
+                      }
+                    });
+              }
+
               var parameter = ['-o' , file_path  ,'-d', output];
               unzip = spawn("unzip", parameter);
               unzip.stdout.setEncoding("utf8");
