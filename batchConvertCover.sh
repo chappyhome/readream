@@ -16,8 +16,11 @@ do
    		jpg_basename=`basename "${findname}"`
    		jpg_filename=${jpg_basename%.*}
    		jgp_new_filename="${jpg_dir}"/"${jpg_filename}""_128_190.jpg"
-   		echo "convert -resize 128X190 ${findname}  ${jgp_new_filename}"
-		convert -resize 128X190! "${findname}"  "${jgp_new_filename}"
+         if [ ! -f "$jgp_new_filename" ]; then  
+            echo "convert -resize 128X190 ${findname}  ${jgp_new_filename}"
+            convert -resize 128X190! "${findname}"  "${jgp_new_filename}"  
+         fi
+   		
    	done
 done
 IFS=$OLDIFS

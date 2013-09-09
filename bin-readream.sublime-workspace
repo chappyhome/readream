@@ -1,0 +1,677 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"std",
+				"stdout"
+			],
+			[
+				"o",
+				"output"
+			],
+			[
+				"to",
+				"toString"
+			],
+			[
+				"lo",
+				"log"
+			],
+			[
+				"array_m",
+				"array_merge"
+			],
+			[
+				"book",
+				"book_list"
+			],
+			[
+				"con",
+				"config"
+			],
+			[
+				"getconten",
+				"file_get_contents"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "updateData/clearUnzipEpub.py",
+			"settings":
+			{
+				"buffer_size": 1005,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Documents and Settings/david.peng/Application Data/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
+			"settings":
+			{
+				"buffer_size": 13714,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "updateData/clearSqliteData.py",
+			"settings":
+			{
+				"buffer_size": 43,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 375.0,
+		"selected_items":
+		[
+			[
+				"pa",
+				"Package Control: Install Package"
+			],
+			[
+				"p",
+				"Package Control: Install Package"
+			],
+			[
+				"pa ",
+				"Package Control: Install Package"
+			],
+			[
+				"pack in",
+				"Package Control: Install Package"
+			],
+			[
+				"Pac",
+				"Package Control: Install Package"
+			],
+			[
+				"Pack In",
+				"Package Control: Create Binary Package File"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 514.0
+	},
+	"console":
+	{
+		"height": 0.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Documents and Settings/david.peng/Application Data/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
+		"/F/GIT/bin-readream/unpack-upub.js",
+		"/F/GIT/bin-readream/batchImportBooks.js",
+		"/E/Project/deliverkindle.com/routes/api.js",
+		"/F/GIT/bin-readream/async/mainHandle.js",
+		"/F/GIT/bin-readream/handleAddLibrary.js",
+		"/F/GIT/bin-readream/batchConvertCover.sh",
+		"/F/GIT/bin-readream/unzip.js",
+		"/E/Project/deliverkindle.com/app.js",
+		"/E/Project/deliverkindle.com/public/reader/view/index.html",
+		"/E/Project/deliverkindle.com/public/index.html",
+		"/E/Project/deliverkindle.com/public/assets/javascript/app.library_app.js",
+		"/E/Project/readium/0.9.1_0/scripts/routers/ws_router.js",
+		"/E/Project/deliverkindle.com/public/assets/javascript/app.library_app.routing.js",
+		"/E/chrome-download/PHPnow-1.5.6/vhosts/turn.com/index.html",
+		"/E/Project/deliverkindle.com/public/assets/javascript/app.library_app.book_list.js",
+		"/E/Project/deliverkindle.com/public/assets/javascript/app.js",
+		"/E/Project/deliverkindle.com/public/assets/javascript/app.closer.js",
+		"/E/Project/deliverkindle.com/public/viewer.html",
+		"/E/Project/readium/0.9.1_0/scripts/routers/crx_viewer_router.js",
+		"/F/GIT/bin-readream/batchImportBooks.sh",
+		"/E/Project/readium/0.9.1_0/viewer.html",
+		"/E/Project/readium/0.9.1_0/scripts/viewer.js",
+		"/E/Project/readium/0.9.1_0/scripts/routers/crx_library_router.js",
+		"/E/chrome-download/PHPnow-1.5.6/vhosts/turn.com/dev.html",
+		"/F/GIT/bin-readream/sftp-config.json",
+		"/E/chrome-download/PHPnow-1.5.6/vhosts/turn.com/js/hooks.min.js",
+		"/E/Project/readium/0.9.1_0/scripts/models/readium_pagination.js",
+		"/E/Project/readium/0.9.1_0/scripts/models/epub_controller.js",
+		"/F/GIT/bin-readream/batchConvertCover2.sh",
+		"/C/Documents and Settings/david.peng/Application Data/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/E/Project/deliverkindle.com/sftp-config.json",
+		"/F/GIT/bin-readream/async_demo/queue.js",
+		"/F/GIT/bin-readream/async/batchImportBooksChild.js",
+		"/F/GIT/bin-readream/async_demo/t.js",
+		"/F/GIT/bin-readream/async/test.js",
+		"/F/GIT/bin-readream/importBookPageToRedis.js",
+		"/F/GIT/bin-readream/async/handle_floder_child.js",
+		"/F/GIT/bin-readream/mapping.json",
+		"/C/Documents and Settings/david.peng/Application Data/Sublime Text 2/Packages/Pretty JSON/Pretty JSON.sublime-settings",
+		"/E/chrome-download/PHPnow-1.5.6/vhosts/marionette.todomvc.com/index.html",
+		"/E/chrome-download/PHPnow-1.5.6/vhosts/marionette.node.readream.com/index.html",
+		"/E/chrome-download/PHPnow-1.5.6/vhosts/marionette.node.readream.com/js/Readream.controller.js",
+		"/E/chrome-download/PHPnow-1.5.6/vhosts/marionette.todomvc.com/js/TodoMVC.Todos.js",
+		"/E/chrome-download/PHPnow-1.5.6/vhosts/marionette.node.readream.com/js/Readream.books.model.js",
+		"/E/chrome-download/PHPnow-1.5.6/vhosts/marionette.todomvc.com/js/TodoMVC.TodoList.js",
+		"/E/chrome-download/PHPnow-1.5.6/vhosts/marionette.todomvc.com/js/TodoMVC.TodoList.Views.js",
+		"/E/chrome-download/PHPnow-1.5.6/vhosts/marionette.node.readream.com/js/Readream.books.view.js",
+		"/E/chrome-download/PHPnow-1.5.6/vhosts/marionette.node.readream.com/js/Readream.js",
+		"/E/chrome-download/PHPnow-1.5.6/vhosts/marionette.node.readream.com/js/Readream.layout.js",
+		"/E/chrome-download/PHPnow-1.5.6/vhosts/marionette.todomvc.com/js/TodoMVC.Layout.js",
+		"/E/chrome-download/PHPnow-1.5.6/vhosts/marionette.node.readream.com/css/readream.css",
+		"/E/chrome-download/PHPnow-1.5.6/vhosts/marionette.todomvc.com/assets/base.css",
+		"/E/chrome-download/PHPnow-1.5.6/vhosts/marionette.node.readream.com/css/bootstrap.min.css",
+		"/E/chrome-download/PHPnow-1.5.6/vhosts/marionette.todomvc.com/css/app.css",
+		"/E/chrome-download/PHPnow-1.5.6/vhosts/marionette.todomvc.com/js/TodoMVC.js",
+		"/F/GIT/node-readream/public/index.html",
+		"/E/chrome-download/PHPnow-1.5.6/vhosts/marionette.node.readream.com/js/readream.js",
+		"/F/GIT/node-readream/public/script/library.js",
+		"/F/GIT/node-readream/app.js",
+		"/F/GIT/node-readream/public/script/models/category.js",
+		"/E/chrome-download/PHPnow-1.5.6/vhosts/todo.com/todos.js",
+		"/E/chrome-download/PHPnow-1.5.6/vhosts/todo.com/index.html",
+		"/F/GIT/node-readream/routes/api.js",
+		"/F/calibre-source/calibre/src/calibre/library/server/ajax.py",
+		"/F/calibre-source/calibre/src/calibre/library/server/xml.py",
+		"/E/readdream/scripts/views/toolbar_view.js",
+		"/F/GIT/node-readream/public/script/views/library.js",
+		"/F/GIT/node-readream/public/script/view.js",
+		"/E/readdream/manifest.json",
+		"/F/GIT/node-readream/public/view.html",
+		"/E/readdream/scripts/views/toc_view.js",
+		"/F/GIT/node-readream/public/script/views/view.js",
+		"/F/GIT/bin-readream/package.json",
+		"/F/GIT/node-readream/package.json",
+		"/F/GIT/node-readream/sftp-config.json",
+		"/E/readream-node/app.js",
+		"/E/readream-node/routes/api.js",
+		"/F/bin/unzip.js",
+		"/F/bin/importBookToRedis.js",
+		"/E/readdream/scripts/readium_library_data.js",
+		"/F/bin/handleAddLibrary.js",
+		"/F/bin/sftp-config.json",
+		"/E/readream-node/sftp-config.json",
+		"/F/bin/handleAddLibrary.sh",
+		"/F/bin/app.js",
+		"/F/bin/batchImportBooks.sh",
+		"/F/bin/batchImportBooks.js",
+		"/F/bin/test.coffee",
+		"/C/Documents and Settings/david.peng/Application Data/Sublime Text 2/Packages/JsFormat/Default (Windows).sublime-keymap",
+		"/F/bin/test.sh",
+		"/F/GIT/GO/gonet/src/event/agent.go",
+		"/F/GIT/GO/gonet/src/event/protos/proto.go",
+		"/F/GIT/GO/gonet/src/event/protos/handle.go",
+		"/F/GIT/GO/gonet/src/helper/sendchan.go",
+		"/F/calibre-source/calibre/src/calibre/library/cli.py",
+		"/F/GIT/GO/gonet/src/agent/sys.go",
+		"/F/GIT/GO/gonet/src/agent/proxy.go",
+		"/F/GIT/GO/gonet/src/agent/buffer.go",
+		"/F/GIT/GO/gonet/src/agent/agent.go",
+		"/F/GIT/GO/gonet/src/agent/event_client/event_client.go",
+		"/F/GIT/GO/gonet/src/agent/event_client/event_func.go",
+		"/F/GIT/GO/gonet/src/db/mongo.go",
+		"/F/GIT/GO/gonet/src/db/user_tbl/user.go",
+		"/F/GIT/GO/gonet/src/event/event.go",
+		"/F/GIT/GO/gonet/src/hub/hub.go",
+		"/F/GIT/GO/gonet/src/hub/agent.go",
+		"/F/GIT/GO/gonet/src/hub/protos/handle.go",
+		"/F/GIT/GO/gonet/src/hub/protos/proto.go",
+		"/F/GIT/GO/gonet/src/misc/packet/packet.go",
+		"/F/GIT/GO/gonet/src/misc/packet/pack.go",
+		"/F/GIT/GO/gonet/src/hub/core/main.go",
+		"/F/GIT/GO/gonet/src/hub/protos/api.go",
+		"/F/GIT/GO/gonet/src/event/startup_work.go",
+		"/C/Documents and Settings/david.peng/Local Settings/Application Data/Google/Chrome/User Data/Default/Extensions/fepbnnnkkadjhjahcafoaglimekefifl/0.9.1_0/lib/zip.js",
+		"/F/GIT/GO/gonet/src/agent/ipc/api.go",
+		"/F/GIT/GO/gonet/src/agent/ipc/handle.go",
+		"/F/GIT/GO/gonet/src/scripts/api.txt",
+		"/F/GIT/GO/gonet/src/event/protos/api.go",
+		"/F/GIT/GO/gonet/src/event/core/manager.go",
+		"/F/GIT/GO/gonet/src/event/core/manager_test.go",
+		"/F/GIT/GO/gonet/src/event/core/README.md",
+		"/F/GIT/GO/gonet/src/event/core/trigger.go",
+		"/F/GIT/GO/gonet/src/cfg/config.go",
+		"/C/Documents and Settings/david.peng/Application Data/Sublime Text 2/Packages/CTags/Default.sublime-keymap",
+		"/F/GIT/GO/gonet/Makefile",
+		"/F/GIT/GO/gonet/nex.go",
+		"/F/GIT/GO/gonet/config.ini"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			"E:\\chrome-download\\PHPnow-1.5.6\\vhosts\\marionette.todomvc.com",
+			"F:\\calibre-source\\calibre",
+			"F:\\GIT\\GO\\gonet\\src",
+			"F:\\calibre-source\\calibre\\src",
+			"C:\\Documents and Settings\\david.peng\\Local Settings\\Application Data\\Google\\Chrome\\User Data\\Default\\Extensions\\fepbnnnkkadjhjahcafoaglimekefifl\\0.9.1_0",
+			"E:\\readdream",
+			"F:\\calibre-source\\calibre\\src,E:\\readdream",
+			"F:\\calibre-source\\calibre\\src"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"default_line_ending",
+			"sublime-settings",
+			"CALIBRE_EPUB_PATH_HASH",
+			"google",
+			"default_line_ending",
+			"();\n",
+			"border",
+			"pager",
+			"();",
+			"info",
+			"getCompleted",
+			"filters",
+			"accordion2",
+			"ajax_search",
+			"Added book ids",
+			"_call",
+			"SendChan",
+			"INT",
+			"PKT_INT",
+			"P_heart_beat_req",
+			"heart_beat_req",
+			"SendChan",
+			"ProtoHandler",
+			"GOPATH",
+			"Added book ids",
+			"Backing up metadata",
+			"Readium.Views.FilePickerView ",
+			"Readium.Models.ZipBookExtractor",
+			"Readium.Views.FilePickerView",
+			"set(\"file\")",
+			"Readium.Models.ZipBookExtractor",
+			"Readium.Models.BookExtractorBase",
+			"BlobReader",
+			"Readium.Models.ZipBookExtractor",
+			"alert",
+			"Readium.Models.ZipBookExtractor",
+			"Timer Report",
+			"Readium.Views.FilePickerView",
+			"UnpackedBookExtractor",
+			"ZipBookExtractor",
+			"invalid url",
+			"BlobReader",
+			"e.preventDefault(",
+			"getToc",
+			"Readium.Models.Toc",
+			"navs",
+			"getTocItem",
+			"toggleToc",
+			"nav_template",
+			"show-readium-toc",
+			"init_toc",
+			"Readium.Views.ToolbarView",
+			"pagination",
+			"_Request",
+			"ApplicationRouter",
+			"div",
+			"library-books-list",
+			"margin-top",
+			"library-books-list",
+			"library-items-container",
+			"empty-message",
+			"library_items_template",
+			"ReadiumLibraryData",
+			"block-view",
+			"row-view",
+			"info-wrap",
+			"ReadiumLibraryData",
+			"ViewerApplicationView",
+			"library_item_template",
+			"library-books-list",
+			"library-items-container",
+			"library_item_template",
+			"book-item",
+			"todoapp",
+			"false",
+			"parseXMLFromDOM",
+			"dropdown-toggle",
+			"epub-demo-library",
+			"library-list",
+			"extension_dir",
+			"addLibraryList",
+			"loadAndRenderEpub",
+			"get",
+			"function",
+			"do_list",
+			"PML2PMLZ"
+		],
+		"highlight": false,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"_REQUEST"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": false
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "updateData/clearUnzipEpub.py",
+					"settings":
+					{
+						"buffer_size": 1005,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								892,
+								892
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"incomplete_sync": null,
+							"origin_encoding": "ASCII",
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/Python/Python.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/C/Documents and Settings/david.peng/Application Data/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
+					"settings":
+					{
+						"buffer_size": 13714,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								7398,
+								7398
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"incomplete_sync": null,
+							"origin_encoding": "ASCII",
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/JavaScript/JSON.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2755.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "updateData/clearSqliteData.py",
+					"settings":
+					{
+						"buffer_size": 43,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								43,
+								43
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"incomplete_sync": null,
+							"syntax": "Packages/Python/Python.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 34.0
+	},
+	"input":
+	{
+		"height": 36.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 102.0
+	},
+	"output.sftp":
+	{
+		"height": 120.0
+	},
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"",
+				"/C/Documents and Settings/david.peng/Local Settings/Temp/scp12390/root/code/fetch.py"
+			],
+			[
+				"getman",
+				"/C/Documents and Settings/david.peng/Application Data/Sublime Text 2/Packages/Default/Preferences.sublime-settings"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 233.0,
+	"status_bar_visible": true
+}
