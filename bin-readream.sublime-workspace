@@ -92,16 +92,18 @@
 	},
 	"file_history":
 	[
-		"/F/GIT/bin-readream/updateData/clearUnzipEpub.py",
+		"/F/GIT/bin-readream/updateData/updateCoverAndUnzip.py",
 		"/F/GIT/bin-readream/updateData/clearSqliteData.py",
-		"/F/GIT/bin-readream/updateData/updateSqliteToRedis.py",
-		"/F/GIT/bin-readream/updateData/handleAddLibrary.js",
 		"/F/GIT/bin-readream/updateData/batchUnpackUpub.js",
+		"/F/GIT/bin-readream/updateData/updateConvertCover.js",
+		"/F/GIT/bin-readream/updateData/updateSqliteToRedis.py",
+		"/F/GIT/bin-readream/updateData/clearUnzipEpub.py",
+		"/F/GIT/bin-readream/updateData/allUpdate.js",
 		"/F/GIT/bin-readream/updateData/handleAddLibrary.py",
+		"/F/GIT/bin-readream/updateData/handleAddLibrary.js",
 		"/C/Documents and Settings/david.peng/Application Data/Sublime Text 2/Packages/Python PEP8 Autoformat/Default (Windows).sublime-keymap",
 		"/F/GIT/bin-readream/updateData/updateSqliteToHashAndSet.js",
 		"/F/GIT/bin-readream/updateData/updateSqliteEPubPathToHash.js",
-		"/F/GIT/bin-readream/updateData/allUpdate.js",
 		"/C/Documents and Settings/david.peng/Application Data/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
 		"/F/GIT/bin-readream/unpack-upub.js",
 		"/F/GIT/bin-readream/batchImportBooks.js",
@@ -217,9 +219,7 @@
 		"/F/GIT/GO/gonet/src/hub/protos/api.go",
 		"/F/GIT/GO/gonet/src/event/startup_work.go",
 		"/C/Documents and Settings/david.peng/Local Settings/Application Data/Google/Chrome/User Data/Default/Extensions/fepbnnnkkadjhjahcafoaglimekefifl/0.9.1_0/lib/zip.js",
-		"/F/GIT/GO/gonet/src/agent/ipc/api.go",
-		"/F/GIT/GO/gonet/src/agent/ipc/handle.go",
-		"/F/GIT/GO/gonet/src/scripts/api.txt"
+		"/F/GIT/GO/gonet/src/agent/ipc/api.go"
 	],
 	"find":
 	{
