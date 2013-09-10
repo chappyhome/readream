@@ -39,30 +39,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "updateData/clearUnzipEpub.py",
-			"settings":
-			{
-				"buffer_size": 1005,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/C/Documents and Settings/david.peng/Application Data/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
-			"settings":
-			{
-				"buffer_size": 13714,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "updateData/clearSqliteData.py",
-			"settings":
-			{
-				"buffer_size": 43,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -71,11 +47,11 @@
 		"selected_items":
 		[
 			[
-				"pa",
+				"p",
 				"Package Control: Install Package"
 			],
 			[
-				"p",
+				"pa",
 				"Package Control: Install Package"
 			],
 			[
@@ -116,6 +92,16 @@
 	},
 	"file_history":
 	[
+		"/F/GIT/bin-readream/updateData/clearUnzipEpub.py",
+		"/F/GIT/bin-readream/updateData/clearSqliteData.py",
+		"/F/GIT/bin-readream/updateData/updateSqliteToRedis.py",
+		"/F/GIT/bin-readream/updateData/handleAddLibrary.js",
+		"/F/GIT/bin-readream/updateData/batchUnpackUpub.js",
+		"/F/GIT/bin-readream/updateData/handleAddLibrary.py",
+		"/C/Documents and Settings/david.peng/Application Data/Sublime Text 2/Packages/Python PEP8 Autoformat/Default (Windows).sublime-keymap",
+		"/F/GIT/bin-readream/updateData/updateSqliteToHashAndSet.js",
+		"/F/GIT/bin-readream/updateData/updateSqliteEPubPathToHash.js",
+		"/F/GIT/bin-readream/updateData/allUpdate.js",
 		"/C/Documents and Settings/david.peng/Application Data/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
 		"/F/GIT/bin-readream/unpack-upub.js",
 		"/F/GIT/bin-readream/batchImportBooks.js",
@@ -233,17 +219,7 @@
 		"/C/Documents and Settings/david.peng/Local Settings/Application Data/Google/Chrome/User Data/Default/Extensions/fepbnnnkkadjhjahcafoaglimekefifl/0.9.1_0/lib/zip.js",
 		"/F/GIT/GO/gonet/src/agent/ipc/api.go",
 		"/F/GIT/GO/gonet/src/agent/ipc/handle.go",
-		"/F/GIT/GO/gonet/src/scripts/api.txt",
-		"/F/GIT/GO/gonet/src/event/protos/api.go",
-		"/F/GIT/GO/gonet/src/event/core/manager.go",
-		"/F/GIT/GO/gonet/src/event/core/manager_test.go",
-		"/F/GIT/GO/gonet/src/event/core/README.md",
-		"/F/GIT/GO/gonet/src/event/core/trigger.go",
-		"/F/GIT/GO/gonet/src/cfg/config.go",
-		"/C/Documents and Settings/david.peng/Application Data/Sublime Text 2/Packages/CTags/Default.sublime-keymap",
-		"/F/GIT/GO/gonet/Makefile",
-		"/F/GIT/GO/gonet/nex.go",
-		"/F/GIT/GO/gonet/config.ini"
+		"/F/GIT/GO/gonet/src/scripts/api.txt"
 	],
 	"find":
 	{
@@ -373,230 +349,8 @@
 	"groups":
 	[
 		{
-			"selected": 1,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "updateData/clearUnzipEpub.py",
-					"settings":
-					{
-						"buffer_size": 1005,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								892,
-								892
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close"
-							],
-							"incomplete_sync": null,
-							"origin_encoding": "ASCII",
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/Python/Python.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "/C/Documents and Settings/david.peng/Application Data/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
-					"settings":
-					{
-						"buffer_size": 13714,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								7398,
-								7398
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close"
-							],
-							"incomplete_sync": null,
-							"origin_encoding": "ASCII",
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/JavaScript/JSON.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 2755.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "updateData/clearSqliteData.py",
-					"settings":
-					{
-						"buffer_size": 43,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								43,
-								43
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close"
-							],
-							"incomplete_sync": null,
-							"syntax": "Packages/Python/Python.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				}
 			]
 		}
 	],

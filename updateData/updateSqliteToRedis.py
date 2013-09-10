@@ -11,7 +11,7 @@ CALIBRE_ALL_BOOKS_SET  = 'calibre_all_books_sort_set'
 CALIBRE_ALL_BOOKS_HASH = 'calibre_all_books_hash'
 CALIBRE_ALL_BOOKS_LIST = 'calibre_all_books_list'
 CALIBRE_EPUB_PATH_HASH = 'calibre_epub_path_hash'
-CALIBRE_PATH_EPUB_HASH = 'calibre_path_epub_hash'
+#CALIBRE_PATH_EPUB_HASH = 'calibre_path_epub_hash'
 repository = "/root/all_book_library/Calibre/metadata.db"
 pool = redis.ConnectionPool(host='127.0.0.1', port=6379)  
 r = redis.Redis(connection_pool=pool)
@@ -34,8 +34,8 @@ if path.exists(repository):
 		book_id = row['id']
 		es.index("readream", "books", body=data, docid=book_id)
 
-		pattern = re.compile('^(.*)\s+\(\d+\)$')
-		match = pattern.match(row['path'])
-		if match:
-			p = match.groups()
-			r.hset(CALIBRE_PATH_EPUB_HASH, p[0], row['id'])
+		#pattern = re.compile('^(.*)\s+\(\d+\)$')
+		#match = pattern.match(row['path'])
+		#if match:
+		#	p = match.groups()
+		#	r.hset(CALIBRE_PATH_EPUB_HASH, p[0], row['id'])

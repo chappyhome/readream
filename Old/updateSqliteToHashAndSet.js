@@ -17,7 +17,7 @@ var	CALIBRE_ALL_BOOKS_SET  = 'calibre_all_books_sort_set',
 	CALIBRE_ALL_BOOKS_HASH = 'calibre_all_books_hash',
 	CALIBRE_ALL_BOOKS_LIST = 'calibre_all_books_list',
 	CALIBRE_EPUB_PATH_HASH = 'calibre_epub_path_hash',
-	CALIBRE_PATH_EPUB_HASH = 'calibre_path_epub_hash',
+	//CALIBRE_PATH_EPUB_HASH = 'calibre_path_epub_hash',
 	repository = "/root/all_book_library/Calibre/metadata.db";
 
 
@@ -32,10 +32,10 @@ if (exists) {
 			redisClient.hset(CALIBRE_ALL_BOOKS_HASH, row.id, JSON.stringify(row));
 			redisClient.rpush(CALIBRE_ALL_BOOKS_LIST, row.id);
 			redisClient.zadd(CALIBRE_ALL_BOOKS_SET, row.id, JSON.stringify(row));
-			var re = /^(.*)\s+\(\d+\)$/;
-			var new_path = row.path.replace(re, "$1");
+			//var re = /^(.*)\s+\(\d+\)$/;
+			//var new_path = row.path.replace(re, "$1");
 			redisClient.hset(CALIBRE_EPUB_PATH_HASH, row.id, row.path);
-			redisClient.hset(CALIBRE_PATH_EPUB_HASH, new_path, row.id);
+			//redisClient.hset(CALIBRE_PATH_EPUB_HASH, new_path, row.id);
 			elasticSearchClient.index("readream", "books", row, row.id,{})
 		    .on('data', function(data) {
 		        console.log(data)
