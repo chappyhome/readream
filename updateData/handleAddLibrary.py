@@ -4,28 +4,39 @@
 import subprocess
 import sqlite3
 import redis
-import json
 import pyinotify
 import esclient
 import re
 from os import path, system
+import ConfigParser 
+
+cf = ConfigParser.ConfigParser()
+cf.read("config.conf")
+repository             =  cf.get("path", "repository")
+unzip_dir              = cf.get("path", "workDir")
+BOOK_LIBRARY           = cf.get("path", "BOOK_LIBRARY")
+elasticsearch_host     = cf.get("path", "elasticsearch_host")
+CALIBRE_ALL_BOOKS_SET  = cf.get("key", "CALIBRE_ALL_BOOKS_SET")
+CALIBRE_ALL_BOOKS_HASH = cf.get("key", "CALIBRE_ALL_BOOKS_HASH")
+CALIBRE_EPUB_PATH_HASH = cf.get("key", "CALIBRE_EPUB_PATH_HASH")
+#repository = "/root/all_book_library/Calibre/metadata.db"
+#unzip_dir = "/var/www/html/public/reader/epub_content/"
+#BOOK_LIBRARY = '/root/all_book_library/Calibre'
+#CALIBRE_ALL_BOOKS_SET  = 'calibre_all_books_sort_set'
+#CALIBRE_ALL_BOOKS_HASH = 'calibre_all_books_hash'
+#CALIBRE_EPUB_PATH_HASH = 'calibre_epub_path_hash'
 
 #init redis
 pool = redis.ConnectionPool(host='127.0.0.1', port=6379)
 r = redis.Redis(connection_pool=pool)
 #init sqlite3
-repository = "/root/all_book_library/Calibre/metadata.db"
 conn = sqlite3.connect(repository)
 conn.row_factory = sqlite3.Row
 cur = conn.cursor()
 #init es
-es = esclient.ESClient("http://localhost:9200/")
+es = esclient.ESClient(elasticsearch_host)
 
-BOOK_LIBRARY = '/root/all_book_library/Calibre'
-CALIBRE_ALL_BOOKS_SET  = 'calibre_all_books_sort_set'
-CALIBRE_ALL_BOOKS_HASH = 'calibre_all_books_hash'
-CALIBRE_EPUB_PATH_HASH = 'calibre_epub_path_hash'
-unzip_dir = "/var/www/html/public/reader/epub_content/"
+
 
 
 wm = pyinotify.WatchManager()

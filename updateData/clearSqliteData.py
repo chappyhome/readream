@@ -3,9 +3,14 @@
 import sqlite3
 import hashlib
 from os import system,path
+import ConfigParser 
+cf = ConfigParser.ConfigParser()
 
-repository = "/root/all_book_library/Calibre/metadata.db";
-workDir = '/var/www/html/public/reader/epub_content/'
+cf.read("config.conf")
+repository =  cf.get("path", "repository")
+workDir    = cf.get("path", "workDir")
+#repository = "/root/all_book_library/Calibre/metadata.db";
+#workDir = '/var/www/html/public/reader/epub_content/'
 try:
 	conn = sqlite3.connect(repository)
 	conn.row_factory = sqlite3.Row

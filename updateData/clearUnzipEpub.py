@@ -3,9 +3,14 @@
 import subprocess
 import sqlite3
 from os import path,system
+import ConfigParser 
 
-workDir = '/var/www/html/public/reader/epub_content'
-repository = "/root/all_book_library/Calibre/metadata.db";
+cf = ConfigParser.ConfigParser()
+cf.read("config.conf")
+repository =  cf.get("path", "repository")
+workDir    = cf.get("path", "workDir")
+#workDir = '/var/www/html/public/reader/epub_content'
+#repository = "/root/all_book_library/Calibre/metadata.db";
 conn = sqlite3.connect(repository)
 conn.row_factory = sqlite3.Row
 cur = conn.cursor()
